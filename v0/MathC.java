@@ -1,9 +1,29 @@
 public class MathC{
+    // Generic Math methods
 
-    // Probability Functions
+    // Return greatest common divisor of two numbers
+    static int gcd(int n, int d){
+      int a, b, x;
+      a = n;
+      b = d;
+      while( a % b != 0 ) {
+          x = a;
+          a = b;
+          b = x % b;
+      }
+      return b;
+    }
+
+    // Return least common multiple of two numbers
+    static int lcm(int a, int b){
+        return(a * b / gcd(a, b));
+    }
+
+
+    // Probability Suite - Factorials, Permutations, Combinations, Binomial Probability & Cumulative Distributions
 
     static int factorial(int num){
-      // n! = n * (n - 1) * (n - 2) * ... 2 * 1
+      // return n! = n * (n - 1) * (n - 2) * ... 2 * 1
 
       // Factorial invalid for negative ints
       if(num < 0){throw new RuntimeException("Invalid input - less than 0");}
@@ -44,7 +64,7 @@ public class MathC{
       // Binomial Probability Distribution Function - return nCr * p^r * (1 - p)^(n - r)
       /* Example question: A basketball player scores on 62% of free throws
          He takes 11 free throws in a match - what is the probability that he scores
-        __exactly__ 5 of them?  // 11C5 * (0.62)^5 * (0.28)^6  ->  binomPDF(11, 5, 0.62) //  */
+        __exactly__ 5 of them?  // 11C5 * (0.62)^5 * (0.38)^6  ->  binomPDF(11, 5, 0.62) //  */
 
 
        return choose(n, r) * Math.pow(p, r) * Math.pow(1 - p, n - r);
