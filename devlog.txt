@@ -4,7 +4,7 @@ Hamim Seam
 Neil Lin
 pd 8
 ---------------------
-<Project Summary / Working Title>
+Wolfram Alpha, Java Edition
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,11 +34,20 @@ wow we so BOSS bc...
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 blah blah pesky bug...
+- What if we don't want to terminate the program if we receive a faulty input for
+the factorial / permute / choose but we also don't want to return any value/
+
 maybe some of these will move into the Obs.Ovrcm section...
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 wow! oo!...
+
+- Instead of needing to do n! / (n - r!) for nPr, you can just find the product of
+the first r terms in n! without using the factorial method
+- For nCr, you can calculate nPr / r! instead of n! / ( r! (n - r)! ) to minimize redundant multiplication/division
+  - Can be slightly improved further by using the lower complement between r & (n - r)
+  nP(r) / (r)! vs nP(n - r) / (n - r)!
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,9 +70,12 @@ tales of wisdom gained...
 ==============================================================
 
 
-yyyy-mm-dd
+2022-01-13
 --------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Neil Lin :: Added team flag, updated files
+Vansh Saboo :: Added the trig functions in radians & degrees, added factorial and permute methods
+==============================================================
+2022-01-14
+--------------------------------------------------------------
+Vansh Saboo :: Finished up probability calculator with nCr, binomial PDFs, and binomial CDFs
 ==============================================================
