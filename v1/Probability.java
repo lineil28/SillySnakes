@@ -83,7 +83,7 @@ public class Probability{
      return sum;
    }
 
-  static void binomCDFAll(int n, int r, double p){
+  static String binomCDFAll(int n, int r, double p){
    // Provide a general output with R = r, R < r, R <= r, R > r, and R >= r
    // Took inspiration for the output from here: https://www.gigacalculator.com/calculators/binomial-probability-calculator.php
    String output = "";
@@ -97,7 +97,7 @@ public class Probability{
    output += "\nProbability of R > " + r + " events:  " + binomCDF(n, r, p, ">");
    output += "\nProbability of R \u2265 " + r + " events:  " + binomCDF(n, r, p, ">="); // \u2265 is ≥
 
-   System.out.println(output);
+   return output;
   }
 
 }

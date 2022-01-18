@@ -20,17 +20,44 @@ public class Woo{
         double p;
         System.out.println(" Select a category: \n [1] Factorial \n [2] Permutation \n [3] Combinations \n [4] Binomial Distributions");
         int trigType = sc.nextInt();
+        //factorial
         if (trigType == 1){
-          System.out.println("What is input for factorial: ");
+          System.out.print("What is input for factorial: ");
           n = sc.nextInt();
-          System.out.println(Probability.factorial(n));
+          System.out.println(n + "!" + " = " + Probability.factorial(n));
+        }
+        //permutation
+        if (trigType == 2){
+          System.out.print("What is input for n of nPr: ");
+          n = sc.nextInt();
+          System.out.print("What is input for r of nPr: ");
+          r = sc.nextInt();
+          System.out.println(n + "P" + r + " = " + Probability.permute(n, r));
+        }
+        //combination
+        if (trigType == 3){
+          System.out.print("What is input for n of nCr: ");
+          n = sc.nextInt();
+          System.out.print("What is input for r of nCr: ");
+          r = sc.nextInt();
+          System.out.println(n + "P" + r + " = " + Probability.choose(n, r));
+        }
+        //CDF
+        if (trigType == 4){
+          System.out.print("What is input for : ");
+          n = sc.nextInt();
+          System.out.print("What is input for : ");
+          r = sc.nextInt();
+          System.out.print("What is input for : ");
+          p = sc.nextDouble();
+          System.out.println(Probability.binomCDFAll(n, r, p));
         }
       }
-/*
+
       if (type == 2){
         System.out.println("");
       }
-*/
+
       if (type == 3){
         break;
       }
