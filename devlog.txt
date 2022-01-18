@@ -51,7 +51,8 @@ the first r terms in n! without using the factorial method
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+We transferred the probability code to a Probability class for better code organization
+
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,5 +86,5 @@ Vansh Saboo :: Wrote propro
 ==============================================================
 2022-01-18
 --------------------------------------------------------------
-<name> :: <event>
+Group :: Structure driver class
 ==============================================================
