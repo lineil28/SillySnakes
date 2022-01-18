@@ -9,9 +9,10 @@ public class Woo{
 
     Scanner sc = new Scanner(System.in);
 
-    System.out.println("Select a category: \n [1] Probability \n [2] Trigonometry \n [3] Exit");
-
     while (true){
+
+      System.out.println("Select a category: \n [1] Probability \n [2] Trigonometry \n [3] Exit");
+
       int type = sc.nextInt();
 
       if (type == 1){
