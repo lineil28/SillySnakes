@@ -58,4 +58,18 @@ public class MathC{
       return factorList;
     }
 
+    static String rectToPolar(double x, double y){
+      double r, t;
+      r = Math.sqrt(x * x + y * y);
+      t = Trigonometry.atand(y / x);
+      if(x < 0) t += 180;  // Arctan returns prinipal value from [-90, 90], if in Quadrants II or III, shift angle to [90, 270]
+      if(x > 0 && y < 0) t += 360; // Add 360 to the arctan value because it could yield a negative angle value in Quadrant IV
+      return "Magnitude: " + r + ",\nAngle : " + t;
+    }
+    static String polarToRect(double r, double t){
+      double x, y;
+      x = r * Trigonometry.cosd(t);
+      y = r * Trigonometry.sind(t);
+      return "(" + x + ", " + y + ")";
+    }
 }

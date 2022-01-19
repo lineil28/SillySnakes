@@ -14,46 +14,72 @@ public class Woo{
 
     while (true){
 
-      System.out.println("Select a category: \n [1] Probability \n [2] Trigonometry \n [3] General Math Utilities \n [4] Exit");
+      System.out.println("Select a category: \n [3] General Math Utilities \n [2] Trigonometry \n [3] Probability \n [4] Exit");
 
       int type = sc.nextInt();
 
-      if (type == 1){
-        int n, r;
-        double p;
-        System.out.println(" Select a category: \n [1] Factorial \n [2] Permutation \n [3] Combinations \n [4] Binomial Distributions");
-        int trigType = sc.nextInt();
-        //factorial
-        if (trigType == 1){
-          System.out.print("What is input for factorial: ");
-          n = sc.nextInt();
-          System.out.println(n + "!" + " = " + Probability.factorial(n));
-        }
-        //permutation
-        if (trigType == 2){
-          System.out.print("What is input for n of nPr: ");
-          n = sc.nextInt();
-          System.out.print("What is input for r of nPr: ");
-          r = sc.nextInt();
-          System.out.println(n + "P" + r + " = " + Probability.permute(n, r));
-        }
-        //combination
-        if (trigType == 3){
-          System.out.print("What is input for n of nCr: ");
-          n = sc.nextInt();
-          System.out.print("What is input for r of nCr: ");
-          r = sc.nextInt();
-          System.out.println(n + "P" + r + " = " + Probability.choose(n, r));
-        }
-        //CDF
-        if (trigType == 4){
-          System.out.print("What is input for : ");
-          n = sc.nextInt();
-          System.out.print("What is input for : ");
-          r = sc.nextInt();
-          System.out.print("What is input for : ");
-          p = sc.nextDouble();
-          System.out.println(Probability.binomCDFAll(n, r, p));
+      if(type == 1){
+        while(true){
+          System.out.println("What would you like to calculate? \n[1] Greatest Common Divisor \n[2] Least Common Multiple \n[3] Simplify a square root \n[4] Factors of a number \n[5] Rectangular to Polar Form \n[6] Polar to Rectangular Form \n[7] Exit Math Utilities");
+          int mathType = sc.nextInt();
+          if(mathType == 1){
+            ArrayList<Integer> values = new ArrayList<Integer>();
+            System.out.println("Input the values (minimum of 2!) for calculating the GCD of, and enter 0 when you are done");
+            int val = sc.nextInt();
+            while(values.size() < 2 || val != 0){
+              if(val != 0) {values.add(val);}
+              val = sc.nextInt();
+            }
+            int gcd = values.get(0);
+            for(int i = 1; i < values.size(); i++){
+              gcd = MathC.gcd(gcd, values.get(i));
+            }
+            System.out.println("These were the values you inputted: " + values);
+            System.out.println("This is their GCD: " + gcd);
+          }
+
+          // Essentially a copy of GCD code
+          if(mathType == 2){
+            ArrayList<Integer> values = new ArrayList<Integer>();
+            System.out.println("Input the values (minimum of 2!) for calculating the LCM of, and enter 0 when you are done");
+            int val = sc.nextInt();
+            while(values.size() < 2 || val != 0){
+              if(val != 0) {values.add(val);}
+              val = sc.nextInt();
+            }
+            int lcm = values.get(0);
+            for(int i = 1; i < values.size(); i++){
+              lcm = MathC.lcm(lcm, values.get(i));
+            }
+            System.out.println("These were the values you inputted: " + values);
+            System.out.println("This is their LCM: " + lcm);
+          }
+
+          if(mathType == 3){
+            System.out.println("What value would you like to simplify the square root of?");
+            int square = sc.nextInt();
+            System.out.println("\u221A" + square + " -> " + MathC.simplifySqrt(square));
+          }
+
+          if(mathType == 4){
+            System.out.println("Input the value you want to determine the factors of");
+            int val = sc.nextInt();
+            System.out.println("The factors of " + val + " are " + MathC.factors(val) );
+          }
+
+          if(mathType == 5){
+            System.out.print("What is your x coordinate? "); double x = sc.nextDouble();
+            System.out.print("What is your y coordinate? "); double y = sc.nextDouble();
+            System.out.println("(" + x + ", " + y + ") ->\n" + MathC.rectToPolar(x, y));
+          }
+
+          if(mathType == 6){
+            System.out.print("What is your magnitude? "); double r = sc.nextDouble();
+            System.out.print("What is your angle? "); double t = sc.nextDouble();
+            System.out.println("Magnitude: " + r + ", Angle: " + t + " -> " + MathC.polarToRect(r, t) );
+          }
+
+          if(mathType == 7) break;
         }
       }
 
@@ -118,61 +144,46 @@ public class Woo{
           }
       }
 
-      if(type == 3){
-        while(true){
-          System.out.println("What would you like to calculate? \n[1] Greatest Common Divisor \n[2] Least Common Multiple \n[3] Simplify a square root \n[4] Factors of a number \n[5] Exit Math Utilities");
-          int mathType = sc.nextInt();
-          if(mathType == 1){
-            ArrayList<Integer> values = new ArrayList<Integer>();
-            System.out.println("Input the values (minimum of 2!) for calculating the GCD of, and enter 0 when you are done");
-            int val = sc.nextInt();
-            while(values.size() < 2 || val != 0){
-              if(val != 0) {values.add(val);}
-              val = sc.nextInt();
-            }
-            int gcd = values.get(0);
-            for(int i = 1; i < values.size(); i++){
-              gcd = MathC.gcd(gcd, values.get(i));
-            }
-            System.out.println("These were the values you inputted: " + values);
-            System.out.println("This is their GCD: " + gcd);
-          }
-
-          // Essentially a copy of GCD code
-          if(mathType == 2){
-            ArrayList<Integer> values = new ArrayList<Integer>();
-            System.out.println("Input the values (minimum of 2!) for calculating the LCM of, and enter 0 when you are done");
-            int val = sc.nextInt();
-            while(values.size() < 2 || val != 0){
-              if(val != 0) {values.add(val);}
-              val = sc.nextInt();
-            }
-            int lcm = values.get(0);
-            for(int i = 1; i < values.size(); i++){
-              lcm = MathC.lcm(lcm, values.get(i));
-            }
-            System.out.println("These were the values you inputted: " + values);
-            System.out.println("This is their LCM: " + lcm);
-          }
-
-          if(mathType == 3){
-            System.out.println("What value would you like to simplify the square root of?");
-            int square = sc.nextInt();
-            System.out.println("\u221A" + square + " -> " + MathC.simplifySqrt(square));
-          }
-
-          if(mathType == 4){
-            System.out.println("Input the value you want to determine the factors of");
-            int val = sc.nextInt();
-            System.out.println("The factors of " + val + " are " + MathC.factors(val) );
-          }
-
-          if(mathType == 5) break;
+      if (type == 3){
+        int n, r;
+        double p;
+        System.out.println(" Select a category: \n [1] Factorial \n [2] Permutation \n [3] Combinations \n [4] Binomial Distributions");
+        int trigType = sc.nextInt();
+        //factorial
+        if (trigType == 1){
+          System.out.print("What is input for factorial: ");
+          n = sc.nextInt();
+          System.out.println(n + "!" + " = " + Probability.factorial(n));
+        }
+        //permutation
+        if (trigType == 2){
+          System.out.print("What is input for n of nPr: ");
+          n = sc.nextInt();
+          System.out.print("What is input for r of nPr: ");
+          r = sc.nextInt();
+          System.out.println(n + "P" + r + " = " + Probability.permute(n, r));
+        }
+        //combination
+        if (trigType == 3){
+          System.out.print("What is input for n of nCr: ");
+          n = sc.nextInt();
+          System.out.print("What is input for r of nCr: ");
+          r = sc.nextInt();
+          System.out.println(n + "P" + r + " = " + Probability.choose(n, r));
+        }
+        //CDF
+        if (trigType == 4){
+          System.out.print("What is input for : ");
+          n = sc.nextInt();
+          System.out.print("What is input for : ");
+          r = sc.nextInt();
+          System.out.print("What is input for : ");
+          p = sc.nextDouble();
+          System.out.println(Probability.binomCDFAll(n, r, p));
         }
       }
 
       if (type == 4)  break;
-
 
     }
 
