@@ -14,14 +14,19 @@ public class Woo{
 
     while (true){
 
-      System.out.println("Select a category: \n [1] General Math Utilities \n [2] Trigonometry \n [3] Probability \n [4] Exit");
+      System.out.println("Select a category: \n [1] General Math Utilities \n [2] Trigonometry \n [3] Probability \n [4] Quadratics \n [5] Exit");
 
       int type = sc.nextInt();
 
+      //General Math Util
       if(type == 1){
+
         while(true){
+
           System.out.println("What would you like to calculate? \n[1] Greatest Common Divisor \n[2] Least Common Multiple \n[3] Simplify a square root \n[4] Factors of a number \n[5] Rectangular to Polar Form \n[6] Polar to Rectangular Form \n[7] Exit Math Utilities");
           int mathType = sc.nextInt();
+
+          // GCD
           if(mathType == 1){
             ArrayList<Integer> values = new ArrayList<Integer>();
             System.out.println("Input the values (minimum of 2!) for calculating the GCD of, and enter 0 when you are done");
@@ -38,7 +43,7 @@ public class Woo{
             System.out.println("This is their GCD: " + gcd);
           }
 
-          // Essentially a copy of GCD code
+          // Essentially a copy of GCD code // LCM
           if(mathType == 2){
             ArrayList<Integer> values = new ArrayList<Integer>();
             System.out.println("Input the values (minimum of 2!) for calculating the LCM of, and enter 0 when you are done");
@@ -55,34 +60,40 @@ public class Woo{
             System.out.println("This is their LCM: " + lcm);
           }
 
+          // Square Root
           if(mathType == 3){
             System.out.println("What value would you like to simplify the square root of?");
             int square = sc.nextInt();
             System.out.println("\u221A" + square + " -> " + MathC.simplifySqrt(square));
           }
 
+          // Factor
           if(mathType == 4){
             System.out.println("Input the value you want to determine the factors of");
             int val = sc.nextInt();
             System.out.println("The factors of " + val + " are " + MathC.factors(val) );
           }
 
+          // RectToPolar
           if(mathType == 5){
             System.out.print("What is your x coordinate? "); double x = sc.nextDouble();
             System.out.print("What is your y coordinate? "); double y = sc.nextDouble();
             System.out.println("(" + x + ", " + y + ") ->\n" + MathC.rectToPolar(x, y));
           }
 
+          // PolarToRect
           if(mathType == 6){
             System.out.print("What is your magnitude? "); double r = sc.nextDouble();
             System.out.print("What is your angle? "); double t = sc.nextDouble();
             System.out.println("Magnitude: " + r + ", Angle: " + t + " -> " + MathC.polarToRect(r, t) );
           }
 
+          //break
           if(mathType == 7) break;
         }
       }
 
+      //Trigonometry
       if (type == 2){
 
           boolean inRadians = true; int trigType;
@@ -91,12 +102,17 @@ public class Woo{
           // - Use an interface for the trig functions?
 
           while(true) {
+
             System.out.println("What would you like to do? \n[1] Change radians/degrees \n[2] Evaluate a trig function \n[3] Exit Trigonometry" );
             trigType = sc.nextInt();
+
+            // Change radians/degrees
             if(trigType == 1){
               if(inRadians) {inRadians = false; System.out.println("Changed to degree mode\n");}
               else{inRadians = true; System.out.println("Changed to radian mode\n");}
             }
+
+            // Evaluate a trig function
             if(trigType == 2){
               System.out.println("What what you like to evaluate? \n[1] Sin \n[2] Cosine \n[3] Tangent \n[4] Cosecant \n[5] Secant \n[6] Cotangent \n[7] Arcsin \n[8] Arccos \n[9] Arctan" );
               int trigFxn = sc.nextInt();
@@ -140,22 +156,26 @@ public class Woo{
               }
             }
 
+            // Break
             if(trigType == 3) break;
           }
       }
 
+      // Probability
       if (type == 3){
         int n, r;
         double p;
         System.out.println(" Select a category: \n [1] Factorial \n [2] Permutation \n [3] Combinations \n [4] Binomial Distributions");
         int trigType = sc.nextInt();
-        //factorial
+
+        // Factorial
         if (trigType == 1){
           System.out.print("What is input for factorial: ");
           n = sc.nextInt();
           System.out.println(n + "!" + " = " + Probability.factorial(n));
         }
-        //permutation
+
+        // Permutation
         if (trigType == 2){
           System.out.print("What is input for n of nPr: ");
           n = sc.nextInt();
@@ -163,7 +183,8 @@ public class Woo{
           r = sc.nextInt();
           System.out.println(n + "P" + r + " = " + Probability.permute(n, r));
         }
-        //combination
+
+        // Combination
         if (trigType == 3){
           System.out.print("What is input for n of nCr: ");
           n = sc.nextInt();
@@ -171,6 +192,7 @@ public class Woo{
           r = sc.nextInt();
           System.out.println(n + "P" + r + " = " + Probability.choose(n, r));
         }
+
         //CDF
         if (trigType == 4){
           System.out.print("What is input for : ");
@@ -183,7 +205,18 @@ public class Woo{
         }
       }
 
-      if (type == 4)  break;
+      if(type == 4){
+        System.out.println("List the coefficients for the following terms of a quadratic ax^2 + bx + c = 0: ");
+        System.out.print("ax^2, a = "); int a = sc.nextInt();
+        System.out.print("bx, b = "); int b = sc.nextInt();
+        System.out.print("c, c = "); int c = sc.nextInt();
+        String rootOne = "(" + (-b) + " + (" + MathC.simplifySqrt(b * b - 4 * a * c) + ") )/" + (2 * a);
+        String rootTwo = "(" + (-b) + " - (" + MathC.simplifySqrt(b * b - 4 * a * c) + ") )/" + (2 * a);
+        System.out.println("The roots of (" + a + ")x^2 + (" + b + ")x + (" + c + ") = 0 are " + rootOne + ", " + rootTwo);
+      }
+
+      // Break
+      if (type == 5)  break;
 
     }
 
