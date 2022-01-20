@@ -14,7 +14,7 @@ public class Woo{
 
     while (true){
 
-      System.out.println("Select a category: \n [3] General Math Utilities \n [2] Trigonometry \n [3] Probability \n [4] Exit");
+      System.out.println("Select a category: \n [1] General Math Utilities \n [2] Trigonometry \n [3] Probability \n [4] Quadratics \n [5] Exit");
 
       int type = sc.nextInt();
 
@@ -204,9 +204,19 @@ public class Woo{
           System.out.println(Probability.binomCDFAll(n, r, p));
         }
       }
-      
+
+      if(type == 4){
+        System.out.println("List the coefficients for the following terms of a quadratic ax^2 + bx + c = 0: ");
+        System.out.print("ax^2, a = "); int a = sc.nextInt();
+        System.out.print("bx, b = "); int b = sc.nextInt();
+        System.out.print("c, c = "); int c = sc.nextInt();
+        String rootOne = "(" + (-b) + " + (" + MathC.simplifySqrt(b * b - 4 * a * c) + ") )/" + (2 * a);
+        String rootTwo = "(" + (-b) + " - (" + MathC.simplifySqrt(b * b - 4 * a * c) + ") )/" + (2 * a);
+        System.out.println("The roots of (" + a + ")x^2 + (" + b + ")x + (" + c + ") = 0 are " + rootOne + ", " + rootTwo);
+      }
+
       // Break
-      if (type == 4)  break;
+      if (type == 5)  break;
 
     }
 

@@ -67,7 +67,7 @@ public class Rational{
  }
 
  public int gcd(){
-   return gcd(this.numer, this.denom);
+   return MathC.gcd(this.numer, this.denom);
  }
 
  public void reduce(){

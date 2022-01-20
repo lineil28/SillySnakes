@@ -66,6 +66,7 @@ public class MathC{
       if(x > 0 && y < 0) t += 360; // Add 360 to the arctan value because it could yield a negative angle value in Quadrant IV
       return "Magnitude: " + r + ",\nAngle : " + t;
     }
+
     static String polarToRect(double r, double t){
       double x, y;
       x = r * Trigonometry.cosd(t);
