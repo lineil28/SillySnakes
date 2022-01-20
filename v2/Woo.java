@@ -14,7 +14,7 @@ public class Woo{
 
     while (true){
 
-      System.out.println("Select a category: \n [3] General Math Utilities \n [2] Trigonometry \n [3] Probability \n [4] Exit");
+      System.out.println("Select a category: \n [1] General Math Utilities \n [2] Trigonometry \n [3] Probability \n [4] Exit");
 
       int type = sc.nextInt();
 
