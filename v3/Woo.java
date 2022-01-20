@@ -62,9 +62,19 @@ public class Woo{
 
           // Square Root
           if(mathType == 3){
-            System.out.println("What value would you like to simplify the square root of?");
-            int square = sc.nextInt();
-            System.out.println("\u221A" + square + " -> " + MathC.simplifySqrt(square));
+            while (true){
+
+              System.out.println("What value would you like to simplify the square root of?");
+              int square = sc.nextInt();
+              if (n > 1 || n < 0){
+                System.out.println("\u221A" + square + " -> " + MathC.simplifySqrt(square));
+                break;
+              }
+              else{
+                System.out.println(" Invalid input - input is between 0 and 1");
+              }
+            }
+
           }
 
           // Factor
@@ -170,9 +180,18 @@ public class Woo{
 
         // Factorial
         if (trigType == 1){
-          System.out.print("What is input for factorial: ");
-          n = sc.nextInt();
-          System.out.println(n + "!" + " = " + Probability.factorial(n));
+          while (true){
+
+            System.out.print("What is input for factorial: ");
+            n = sc.nextInt();
+            if (n >= 0){
+              System.out.println(n + "!" + " = " + Probability.factorial(n));
+              break;
+            }
+            else{
+              System.out.println(" Invalid input - input is negative");
+            }
+          }
         }
 
         // Permutation
@@ -186,25 +205,47 @@ public class Woo{
 
         // Combination
         if (trigType == 3){
-          System.out.print("What is input for n of nCr: ");
-          n = sc.nextInt();
-          System.out.print("What is input for r of nCr: ");
-          r = sc.nextInt();
-          System.out.println(n + "P" + r + " = " + Probability.choose(n, r));
+          while (true){
+            System.out.print("What is input for n of nCr: ");
+            n = sc.nextInt();
+            System.out.print("What is input for r of nCr: ");
+            r = sc.nextInt();
+            if (n > r){
+              System.out.println(n + "P" + r + " = " + Probability.choose(n, r));
+            }
+            else { System.out.println("Invalid input: r > n ")}
+          }
         }
 
         //CDF
         if (trigType == 4){
-          System.out.print("What is input for : ");
-          n = sc.nextInt();
-          System.out.print("What is input for : ");
-          r = sc.nextInt();
-          System.out.print("What is input for : ");
-          p = sc.nextDouble();
-          System.out.println(Probability.binomCDFAll(n, r, p));
+          while (true){
+
+
+
+            System.out.print("What is input for n : ");
+            n = sc.nextInt();
+            System.out.print("What is input for r : ");
+            r = sc.nextInt();
+            System.out.print("What is input for p : ");
+            p = sc.nextDouble();
+
+            if ( n > r && p < 1 && p > 0){
+              System.out.println(Probability.binomCDFAll(n, r, p));
+              break;
+            }
+            else if (n < r){
+              System.out.println("Invalid input - n < r ");
+            }
+            else{
+              System.out.println("Invalid input - p is not between 0 and 1 ");
+            }
+
+          }
         }
       }
 
+      //Quadratics
       if(type == 4){
         System.out.println("List the coefficients for the following terms of a quadratic ax^2 + bx + c = 0: ");
         System.out.print("ax^2, a = "); int a = sc.nextInt();
@@ -217,6 +258,10 @@ public class Woo{
 
       // Break
       if (type == 5)  break;
+
+      else{
+
+      }
 
     }
 

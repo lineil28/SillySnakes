@@ -17,7 +17,7 @@ public class Probability{
     // nPr = n! / (n - r)!
 
     if(n < r){throw new RuntimeException("Invalid input - r is greater than n");}
-    if(n < 0 || r < 0){throw new RuntimeException("Invalid input - n < 0 or r < 0"); }
+    if(n < 0 || r < 0){throw new RuntimeException("Invalid input - n < 0 or r < 0 or r < n"); }
 
     // return factorial(n) / factorial(n - r);
 
