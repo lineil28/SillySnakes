@@ -213,7 +213,7 @@ public class Woo{
             if (n > r){
               System.out.println(n + "P" + r + " = " + Probability.choose(n, r));
             }
-            else { System.out.println("Invalid input: r > n ")}
+            else { System.out.println("Invalid input: r > n "); }
           }
         }
 
