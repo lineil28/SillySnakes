@@ -95,6 +95,13 @@ Neil Lin + Vansh Saboo :: init v2, added stuff to v2
 ==============================================================
 2022-01-20
 --------------------------------------------------------------
-Group: init v3, 
-Neil Lin :: added UML pdf
+Neil Lin :: init v3, add Rational
+Vansh Saboo :: init and fini QuadraticSolver
+Hamim Seam :: update README
+==============================================================
+2022-01-20
+--------------------------------------------------------------
+Neil Lin :: init v3, add Rational
+Vansh Saboo :: init and fini QuadraticSolver
+Hamim Seam :: added UML pdf
 ==============================================================
