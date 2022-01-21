@@ -86,15 +86,19 @@ public class Woo{
 
           // RectToPolar
           if(mathType == 5){
-            System.out.print("What is your x coordinate? "); double x = sc.nextDouble();
-            System.out.print("What is your y coordinate? "); double y = sc.nextDouble();
+            System.out.print("What is your x coordinate? ");
+            double x = sc.nextDouble();
+            System.out.print("What is your y coordinate? ");
+            double y = sc.nextDouble();
             System.out.println("(" + x + ", " + y + ") ->\n" + MathC.rectToPolar(x, y));
           }
 
           // PolarToRect
           if(mathType == 6){
-            System.out.print("What is your magnitude? "); double r = sc.nextDouble();
-            System.out.print("What is your angle? "); double t = sc.nextDouble();
+            System.out.print("What is your magnitude? ");
+            double r = sc.nextDouble();
+            System.out.print("What is your angle? ");
+            double t = sc.nextDouble();
             System.out.println("Magnitude: " + r + ", Angle: " + t + " -> " + MathC.polarToRect(r, t) );
           }
 
@@ -191,6 +195,7 @@ public class Woo{
             else{
               System.out.println(" Invalid input - input is negative");
             }
+
           }
         }
 
@@ -219,9 +224,8 @@ public class Woo{
 
         //CDF
         if (trigType == 4){
+
           while (true){
-
-
 
             System.out.print("What is input for n : ");
             n = sc.nextInt();
@@ -242,15 +246,19 @@ public class Woo{
             }
 
           }
+
         }
       }
 
       //Quadratics
       if(type == 4){
         System.out.println("List the coefficients for the following terms of a quadratic ax^2 + bx + c = 0: ");
-        System.out.print("ax^2, a = "); int a = sc.nextInt();
-        System.out.print("bx, b = "); int b = sc.nextInt();
-        System.out.print("c, c = "); int c = sc.nextInt();
+        System.out.print("ax^2, a = ");
+        int a = sc.nextInt();
+        System.out.print("bx, b = ");
+        int b = sc.nextInt();
+        System.out.print("c, c = ");
+        int c = sc.nextInt();
         System.out.println(QuadraticSolver.quadraticSolver(a, b, c));
       }
 
