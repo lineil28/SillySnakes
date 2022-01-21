@@ -1,14 +1,5 @@
 /*
- * Team Green: Abdullah Faruque, Neil Lin, Russell Goychayev
- * APCS pd8
- * HW42: Be More Rational
- * 2021-12-3
- * time spent - 0.5 hours
- *
- * Disco- ...
- *
- * QCC- ...
- *
+
 */
 public class Rational{
  private int numer , denom;
@@ -32,8 +23,8 @@ public class Rational{
  }
 
  public String toString(){
-   String x = (numer + "/" + denom);
-   if (denom == 1){ x = numer + ""; }
+   String x = numer;
+   if(denom != 1) x += "/" + denom;
    return x;
  }
 
@@ -66,12 +57,8 @@ public class Rational{
    this.denom=(this.denom*s.denom);
  }
 
- public int gcd(){
-   return MathC.gcd(this.numer, this.denom);
- }
-
  public void reduce(){
-   gcd = this.gcd();
+   gcd = MathC.gcd(numer, denom);
    numer = numer / gcd;
    denom = denom / gcd;
  }
@@ -87,25 +74,4 @@ public class Rational{
   return 0;
  }
 
- public static void main(String[] args){
-   Rational r = new Rational(2,3);
-   Rational s = new Rational(1,2);
-   Rational t = new Rational(3,6);
-   System.out.println(r.toString());
-   System.out.println(r.floatValue());
-   r.multiply(s);
-   System.out.println(r.toString());
-   r.divide(s);
-   System.out.println(r.toString());
-   r.add(s);
-   System.out.println(r.toString());
-   r.subtract(s);
-   System.out.println(r.toString());
-   System.out.println(r.gcd());
-   r.reduce();
-   System.out.println(r.toString());
-   System.out.println(r.compareTo(s));
-   System.out.println(s.compareTo(r));
-   System.out.println(s.compareTo(t));
- }
 }

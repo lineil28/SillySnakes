@@ -266,7 +266,7 @@ public class Woo{
         int b = sc.nextInt();
         System.out.print("c, c = ");
         int c = sc.nextInt();
-        System.out.println(QuadraticSolver.quadraticSolver(a, b, c));
+        System.out.println(String.format("The roots of (%d)x^2 + (%d)x + (%d) = 0 are %s", a, b, c, QuadraticSolver.quadraticSolver(a, b, c)));
       }
 
       // Break
