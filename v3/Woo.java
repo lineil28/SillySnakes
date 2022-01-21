@@ -66,7 +66,7 @@ public class Woo{
 
               System.out.println("What value would you like to simplify the square root of?");
               int square = sc.nextInt();
-              if (n > 1 || n < 0){
+              if (square > 1 || square < 0){
                 System.out.println("\u221A" + square + " -> " + MathC.simplifySqrt(square));
                 break;
               }
