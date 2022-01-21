@@ -23,7 +23,7 @@ public class Rational{
  }
 
  public String toString(){
-   String x = numer;
+   String x = numer + "";
    if(denom != 1) x += "/" + denom;
    return x;
  }
