@@ -54,7 +54,31 @@ public class QuadraticSolver{
 
         // Imaginary roots
         else{
-          return "Imaginary roots!";
+            // COMPLEX!
+            discriminant *= -1; // Factor out "i" from the discriminant, incorporate i into the string instead
+            int maxSquare = maxSquareFactor(discriminant);
+            discriminant /= maxSquare * maxSquare;
+
+            int gcd = MathC.gcd(MathC.gcd(-b, maxSquare), denominator);
+            b /= gcd; maxSquare /= gcd; denominator /= gcd;
+
+
+            if(b != 0 && denominator != 1){rootOne += "("; rootTwo += "(";}
+
+            if(b != 0){rootOne += -b + " + ";  rootTwo += -b + " - ";}
+            else {rootTwo += "-";}
+
+            if(maxSquare != 1){rootOne += maxSquare; rootTwo += maxSquare;}
+            rootOne += "i"; rootTwo += "i"; // Only real difference from rational / irrational roots is the "i", and having expressions as a + bi instead of just a
+
+            if(discriminant != 1){rootOne += "\u221A(" + discriminant + ")"; rootTwo += "\u221A(" + discriminant + ")";}
+
+            if(b != 0 && denominator != 1){rootOne += ")"; rootTwo += ")";}
+
+            if(denominator != 1){rootOne += "/" + denominator; rootTwo += "/" + denominator; }
+
+            return rootOne + ", " + rootTwo;
+
         }
 
     }
