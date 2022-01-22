@@ -142,17 +142,17 @@ public class Woo{
                 else {System.out.println("cos(" + val + "\u00b0) = " + Trigonometry.cosd(val) );}
               }
               if(trigFxn == 3){
-                if(inRadians){System.out.println("tan(" + val + ") = " + Math.tan(val) ); }
-                else {System.out.println("tan(" + val + "\u00b0) = " + Trigonometry.tand(val) );}
+		if(inRadians){System.out.println("tan(" + val + ") = " + Math.tan(val) ); }
+               	else {System.out.println("tan(" + val + "\u00b0) = " + Trigonometry.tand(val) );}
               }
-              if(trigFxn == 4){
-                if(inRadians){System.out.println("csc(" + val + ") = " + Trigonometry.csc(val) ); }
-                else {System.out.println("csc(" + val + "\u00b0) = " + Trigonometry.cscd(val) ); }
-              }
-              if(trigFxn == 5){
-                if(inRadians){System.out.println("sec(" + val + ") = " + Trigonometry.sec(val) ); }
-                else {System.out.println("sec(" + val + "\u00b0) = " + Trigonometry.secd(val) ); }
-              }
+	      if(trigFxn == 4){
+               if(inRadians){System.out.println("csc(" + val + ") = " + Trigonometry.csc(val) ); }
+               else {System.out.println("csc(" + val + "\u00b0) = " + Trigonometry.cscd(val) ); }
+             }
+             if(trigFxn == 5){
+               if(inRadians){System.out.println("sec(" + val + ") = " + Trigonometry.sec(val) ); }
+               else {System.out.println("sec(" + val + "\u00b0) = " + Trigonometry.secd(val) ); }
+             }
               if(trigFxn == 6){
                 if(inRadians){System.out.println("cot(" + val + ") = " + Trigonometry.cot(val) ); }
                 else {System.out.println("cot(" + val + "\u00b0) = " + Trigonometry.cotd(val) ); }
@@ -180,7 +180,7 @@ public class Woo{
       else if (type.equals("3")){
         int n, r;
         double p;
-        System.out.println(" Select a category: \n [1] Factorial \n [2] Permutation \n [3] Combinations \n [4] Binomial Distributions");
+        System.out.println(" Select a category: \n [1] Factorial \n [2] Permutation \n [3] Combinations \n [4] Binomial Distributions \n [5] Exit Probability");
         int trigType = sc.nextInt();
 
         // Factorial
