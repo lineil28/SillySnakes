@@ -10,6 +10,13 @@ public class Rational{
    this.denom = 1;
  }
 
+ public Rational(int num){
+     this(num, 1); // Constructor for int(eger) values
+ }
+
+ public Rational(Rational other){
+     this(other.numer, other.denom); // Copy constructor
+  }
 
  public Rational(int numer, int denom) {
    this.numer = numer;
