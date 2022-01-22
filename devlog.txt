@@ -114,3 +114,8 @@ Vansh Saboo :: add to QuadraticSolver
 Hamim Seam :: added UML pdf
 >>>>>>> e0c8a23d181677e69b45d324d97c2a0fc244c622
 ==============================================================
+2022-01-22
+Vansh Saboo ::
+- Added a cubic solver
+- Added a root solver (can solve for linear, quadratic, and cubics, incorporates QuadraticSolver and CubicSolver)
+- Added polynomial entering UI for more general Polynomials

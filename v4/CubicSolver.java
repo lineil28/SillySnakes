@@ -6,7 +6,12 @@ public class CubicSolver{
   // q = (bc/6a^2 - d/2a - b^3)
   // p = (c/3a - b^2/9a^2)
 
-  public static String cubic(int a, int b, int c, int d){
+  public static String cubicSolver(int[] coefficients){
+    int a = coefficients[0];
+    int b = coefficients[1];
+    int c = coefficients[2];
+    int d = coefficients[3];
+
     Rational p = new Rational(c, 3 * a); // c/3a
     p.subtract(new Rational(b * b, 9 * a * a) ); // c/3a - b^2/9a^2
     p.reduce();

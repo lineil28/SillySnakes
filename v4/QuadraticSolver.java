@@ -1,6 +1,10 @@
 public class QuadraticSolver{
-    public static String quadSolver(int a, int b, int c){
+    public static String quadSolver(int[] coefficients){
         // Quadratic Formula: For ax^2 + bx + c = 0, the roots are x = (-b +/- sqrt(b^2 - 4ac))/2a
+
+        int a = coefficients[0];
+        int b = coefficients[1];
+        int c = coefficients[2];
 
         int denominator = 2 * a;
         int discriminant = b * b - 4 * a * c; // Discriminant: b^2 - 4ac, to be used to test real roots for disc >= 0 or imaginary roots for disc < 0

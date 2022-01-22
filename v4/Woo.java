@@ -16,7 +16,7 @@ public class Woo{
 
     while (true){
 
-      System.out.println("Select a category: \n [1] General Math Utilities \n [2] Trigonometry \n [3] Probability \n [4] Quadratics \n [5] Exit");
+      System.out.println("Select a category: \n [1] General Math Utilities \n [2] Trigonometry \n [3] Probability \n [4] Polynomials \n [5] Exit");
       String type = sc.next();
 
       //General Math Util
@@ -251,16 +251,19 @@ public class Woo{
         }
       }
 
-      //Quadratics
+      // Polynomials
       else if(type.equals("4")){
-        System.out.println("List the coefficients for the following terms of a quadratic ax^2 + bx + c = 0: ");
-        System.out.print("ax^2, a = ");
-        int a = sc.nextInt();
-        System.out.print("bx, b = ");
-        int b = sc.nextInt();
-        System.out.print("c, c = ");
-        int c = sc.nextInt();
-        System.out.println(String.format("The roots of (%d)x^2 + (%d)x + (%d) = 0 are %s", a, b, c, QuadraticSolver.quadSolver(a, b, c)));
+        System.out.println("What is the degree of your polynomial?");
+        int degree = sc.nextInt();
+        int[] polynomial = new int[degree + 1];
+
+        System.out.println("Enter the coefficients for your polynomial");
+        for(int i = degree; i >= 0; i--){
+          System.out.println("x^ " + i);
+          polynomial[degree - i] = sc.nextInt();
+        }
+
+        System.out.println(String.format("The roots of your polynomial are %s" RootsSolver.rootsSolver(polynomial)));
       }
 
       // Break
