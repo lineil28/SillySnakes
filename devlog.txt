@@ -86,10 +86,31 @@ Vansh Saboo :: Wrote propro
 ==============================================================
 2022-01-18
 --------------------------------------------------------------
+<<<<<<< HEAD
 Group :: Structure driver class, init v1
 Vansh :: Added square root simplifier and integer* factorizer (* only returns positive factors)
 - Added user interface for Trigonometry
   - EXTREMELY ANNOYING TO WRITE - lots of copy pasting and just looks ugly - may need to evaluate how to clean it up
   - Should we ditch the degree symbol for aesthetic purposes and instead make some sort of interface to apply a trig fxn?
 
+=======
+Group :: Structure driver class, init v1, added stuff to v1
+==============================================================
+2022-01-19
+--------------------------------------------------------------
+Vansh Saboo + Hamim Seam :: UML Diagram
+Neil Lin + Vansh Saboo :: init v2, added stuff to v2
+==============================================================
+2022-01-20
+--------------------------------------------------------------
+Neil Lin :: init v3, add Rational
+Vansh Saboo :: init and fini QuadraticSolver
+Hamim Seam :: update README
+==============================================================
+2022-01-20
+--------------------------------------------------------------
+Neil Lin :: init v4, up Woo
+Vansh Saboo :: add to QuadraticSolver
+Hamim Seam :: added UML pdf
+>>>>>>> e0c8a23d181677e69b45d324d97c2a0fc244c622
 ==============================================================

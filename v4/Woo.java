@@ -2,6 +2,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class Woo{
 
+  public static int type;
+
   public static void main(String[] args){
     /** System.out.println(Trigonometry.cscd(45) ); // Should return 1/(sqrt2/2) -> 2/sqrt2 -> sqrt2
     System.out.println(Probability.permute(6, 2) ); // 6P2 = 6 * 5 = 30
@@ -15,11 +17,10 @@ public class Woo{
     while (true){
 
       System.out.println("Select a category: \n [1] General Math Utilities \n [2] Trigonometry \n [3] Probability \n [4] Quadratics \n [5] Exit");
-
-      int type = sc.nextInt();
+      String type = sc.next();
 
       //General Math Util
-      if(type == 1){
+      if(type.equals("1")){
 
         while(true){
 
@@ -108,7 +109,7 @@ public class Woo{
       }
 
       //Trigonometry
-      if (type == 2){
+      else if (type.equals("2")){
 
           boolean inRadians = true; int trigType;
           // NEED A WAY TO MAKE THIS CODE CLEANER AND MORE SUCCINCT
@@ -176,7 +177,7 @@ public class Woo{
       }
 
       // Probability
-      if (type == 3){
+      else if (type.equals("3")){
         int n, r;
         double p;
         System.out.println(" Select a category: \n [1] Factorial \n [2] Permutation \n [3] Combinations \n [4] Binomial Distributions");
@@ -251,7 +252,7 @@ public class Woo{
       }
 
       //Quadratics
-      if(type == 4){
+      else if(type.equals("4")){
         System.out.println("List the coefficients for the following terms of a quadratic ax^2 + bx + c = 0: ");
         System.out.print("ax^2, a = ");
         int a = sc.nextInt();
@@ -259,14 +260,14 @@ public class Woo{
         int b = sc.nextInt();
         System.out.print("c, c = ");
         int c = sc.nextInt();
-        System.out.println(QuadraticSolver.quadraticSolver(a, b, c));
+        System.out.println(String.format("The roots of (%d)x^2 + (%d)x + (%d) = 0 are %s", a, b, c, QuadraticSolver.quadSolver(a, b, c)));
       }
 
       // Break
-      if (type == 5)  break;
+      else if (type.equals("5"))  break;
 
       else{
-
+        System.out.println("Invalid input");
       }
 
     }

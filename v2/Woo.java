@@ -205,6 +205,7 @@ public class Woo{
         }
       }
 
+      // Quadratics
       if(type == 4){
         System.out.println("List the coefficients for the following terms of a quadratic ax^2 + bx + c = 0: ");
         System.out.print("ax^2, a = "); int a = sc.nextInt();
