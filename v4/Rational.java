@@ -19,14 +19,14 @@ public class Rational{
   }
 
  public Rational(int numer, int denom) {
-   this.numer = numer;
-   this.denom = denom;
+   this();
+   if (denom != 0) {
+     this.numer = numer;
+     this.denom = denom;
+    }
 
-   if (denom == 0) {
-     System.out.println("Invalid denominator.");
-   numer=0;
-   denom=1;
-   }
+  else {System.out.println("Invalid denominator. Set to 0/1");}
+
  }
 
  public String toString(){

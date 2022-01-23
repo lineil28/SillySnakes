@@ -263,7 +263,7 @@ public class Woo{
           polynomial[degree - i] = sc.nextInt();
         }
 
-        System.out.println(String.format("The roots of your polynomial are %s" RootsSolver.rootsSolver(polynomial)));
+        System.out.println(String.format("The roots of your polynomial are %s", RootsSolver.rootsSolver(polynomial)));
       }
 
       // Break
